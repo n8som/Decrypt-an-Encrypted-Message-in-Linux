@@ -26,12 +26,15 @@ In this task, I need to explore the contents of my home directory and read the c
 
 Two files, Q1.encrypted and README.txt, and a subdirectory, caesar, are listed:
 
-[]
+![image](https://github.com/n8som/Decrypt-an-Encrypted-Message-in-Linux/assets/110139109/6208d597-d7a1-45d8-bafb-1fe666da3f2f)
+
 The README.txt file contains an important message with instructions I need to follow.
 
 2. Use the ```cat``` command to list the contents of the README.txt file.
 
 The message in the README.txt file advises that the caesar subdirectory contains a hidden file.
+
+![image](https://github.com/n8som/Decrypt-an-Encrypted-Message-in-Linux/assets/110139109/f9725244-0305-4211-a645-dd9523e9948c)
 
 In the next task, I’ll need to find the hidden file and solve the Caesar cipher that protects it. The file contains instructions on how to recover my data.
 
@@ -47,10 +50,13 @@ In this task, I need to find a hidden file in my home directory and decrypt the 
 
 This will display the following output:
 
-[]
+![image](https://github.com/n8som/Decrypt-an-Encrypted-Message-in-Linux/assets/110139109/e451ddd9-faf1-4420-b76f-4c08da946dd9)
+
 Hidden files in Linux can be identified by their name starting with a period (.).
 
 3. Use the ```cat``` command to list the contents of the .leftShift3 file.
+
+![image](https://github.com/n8som/Decrypt-an-Encrypted-Message-in-Linux/assets/110139109/696a9313-4aac-4d12-81aa-6c9932664048)
 
 The message in the .leftShift3 file appears to be scrambled. This is because the data has been encrypted using a Caesar cipher. This cipher can be solved by shifting each alphabet character to the left or right by a fixed number of spaces. In this example, the shift is three letters to the left. Thus "d" stands for "a", and "e" stands for "b".
 
@@ -62,11 +68,12 @@ Note: The ```tr``` command translates text from one set of characters to another
 
 In this case, the command ```tr "d-za-cD-ZA-C" "a-zA-Z"``` translates all the lowercase and uppercase letters in the alphabet back to their original position. The first character set, indicated by ```"d-za-cD-ZA-C"```, is translated to the second character set, which is ```"a-zA-Z"```
 
+![image](https://github.com/n8som/Decrypt-an-Encrypted-Message-in-Linux/assets/110139109/ba7733fa-106a-4766-85a6-a3f60c08e149)
+
 5. Now, return to my home directory before completing the next task:
 
 ```cd ~```.
 
-[]
 <h2>Task 3. Decrypt a file</h2>
 
 Now that I have solved the Caesar cipher, in this task I need to use the command revealed in .leftshift3 to decrypt a file and recover my data so I can read the message it contains.
@@ -79,11 +86,13 @@ Although I don't need to memorize this command, to help me better understand the
 
 In this instance, the ```openssl``` command reverses the encryption of the file with a secure symmetric cipher, as indicated by ```AES-256-CBC```. The ```-pbkdf2``` option is used to add extra security to the key, and ```-a``` indicates the desired encoding for the output. The ```-d``` indicates decrypting, while ```-in``` specifies the input file and ```-out``` specifies the output file. The ```-k``` specifies the password, which in this example is ```ettubrute```.
 
-2. Use the ```ls``` command to list the contents of Ir current working directory again.
+2. Use the ```ls``` command to list the contents of the current working directory again.
 
 The new file Q1.recovered in the directory listing is the decrypted file and contains a message.
 
 3. Use the ```cat``` command to list the contents of the Q1.recovered file.
+
+![image](https://github.com/n8som/Decrypt-an-Encrypted-Message-in-Linux/assets/110139109/1a91aaa3-d67c-498b-b383-24687e20f56c)
 
 <h2>Conclusion</h2>
 
